@@ -15,14 +15,15 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
+import com.ranielschneider.imccalculator.ui.theme.AppDarkBg
+import com.ranielschneider.imccalculator.ui.theme.AppPink
+import com.ranielschneider.imccalculator.ui.theme.AppPurple
 
-val Purple = Color(0xFF7C3AED)
-val Pink = Color(0xFFEC4899)
-val DarkBg = Color(0xFF0F0F1A)
-val DarkSurface = Color(0xFF1A1A2E)
 
 @Composable
 fun FormScreen(modifier: Modifier = Modifier, navController: NavController) {
@@ -40,7 +41,7 @@ fun FormScreen(modifier: Modifier = Modifier, navController: NavController) {
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .background(DarkBg)
+            .background(AppDarkBg)
     ) {
         Column(
             modifier = Modifier
@@ -59,7 +60,7 @@ fun FormScreen(modifier: Modifier = Modifier, navController: NavController) {
                 text = "de IMC",
                 fontSize = 36.sp,
                 fontWeight = FontWeight.Black,
-                color = Pink
+                color = AppPink
             )
 
             Spacer(modifier = Modifier.height(48.dp))
@@ -71,13 +72,13 @@ fun FormScreen(modifier: Modifier = Modifier, navController: NavController) {
                 modifier = Modifier.fillMaxWidth(),
                 shape = RoundedCornerShape(16.dp),
                 colors = OutlinedTextFieldDefaults.colors(
-                    focusedBorderColor = Purple,
+                    focusedBorderColor = AppPurple,
                     unfocusedBorderColor = Color.White.copy(alpha = 0.3f),
-                    focusedLabelColor = Purple,
+                    focusedLabelColor = AppPurple,
                     unfocusedLabelColor = Color.White.copy(alpha = 0.5f),
                     focusedTextColor = Color.White,
                     unfocusedTextColor = Color.White,
-                    cursorColor = Purple
+                    cursorColor = AppPurple
                 ),
                 keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal)
             )
@@ -91,13 +92,13 @@ fun FormScreen(modifier: Modifier = Modifier, navController: NavController) {
                 modifier = Modifier.fillMaxWidth(),
                 shape = RoundedCornerShape(16.dp),
                 colors = OutlinedTextFieldDefaults.colors(
-                    focusedBorderColor = Purple,
+                    focusedBorderColor = AppPurple,
                     unfocusedBorderColor = Color.White.copy(alpha = 0.3f),
-                    focusedLabelColor = Purple,
+                    focusedLabelColor = AppPurple,
                     unfocusedLabelColor = Color.White.copy(alpha = 0.5f),
                     focusedTextColor = Color.White,
                     unfocusedTextColor = Color.White,
-                    cursorColor = Purple
+                    cursorColor = AppPurple
                 ),
                 keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal)
             )
@@ -107,7 +108,7 @@ fun FormScreen(modifier: Modifier = Modifier, navController: NavController) {
             if (erro.isNotEmpty()) {
                 Text(
                     text = erro,
-                    color = Pink,
+                    color = AppPink,
                     fontSize = 12.sp,
                     modifier = Modifier.padding(horizontal = 4.dp)
                 )
@@ -120,7 +121,7 @@ fun FormScreen(modifier: Modifier = Modifier, navController: NavController) {
                     .fillMaxWidth()
                     .scale(escala)
                     .background(
-                        brush = Brush.horizontalGradient(listOf(Purple, Pink)),
+                        brush = Brush.horizontalGradient(listOf(AppPurple, AppPink)),
                         shape = RoundedCornerShape(16.dp)
                     )
             ) {
@@ -155,3 +156,4 @@ fun FormScreen(modifier: Modifier = Modifier, navController: NavController) {
         }
     }
 }
+

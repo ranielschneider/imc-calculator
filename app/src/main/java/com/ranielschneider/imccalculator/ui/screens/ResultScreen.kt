@@ -15,6 +15,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.ranielschneider.imccalculator.ui.theme.AppDarkBg
 
 @Composable
 fun ResultScreen(imc: String?) {
@@ -48,7 +49,7 @@ fun ResultScreen(imc: String?) {
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .background(DarkBg),
+            .background(AppDarkBg),
         contentAlignment = Alignment.Center
     ) {
         Column(

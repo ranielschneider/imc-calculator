@@ -5,6 +5,7 @@ import androidx.compose.animation.core.tween
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
@@ -50,4 +51,10 @@ fun AppNavigation() {
             ResultScreen(imc = imc)
         }
     }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun AppNavigationPreview() {
+    AppNavigation()
 }
